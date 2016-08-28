@@ -123,10 +123,24 @@ describe('plugin-sleep', function () {
     ret.stdout.should.equal('');
   });
 
-  it('the fallback works', function () {
-    var start = new Date();
-    pluginSleep.execSleep(1);
-    var end = new Date();
-    assertApproxEqual(end - start, 1000);
+  describe('fallback methods', function () {
+    it('can rely on child_process.execSync', function () {
+      if (shell.which('sleep')) {
+        var start = new Date();
+        pluginSleep.execSleep(1);
+        var end = new Date();
+        assertApproxEqual(end - start, 1000);
+      } else {
+        // Cannot verify on Windows
+        console.warn('Unable to verify child_process.execSync');
+      }
+    });
+
+    it('can rely on a busy wait', function () {
+      var start = new Date();
+      pluginSleep.busyWait(1);
+      var end = new Date();
+      assertApproxEqual(end - start, 1000);
+    });
   });
 });
