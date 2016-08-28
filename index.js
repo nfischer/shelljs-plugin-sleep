@@ -4,7 +4,7 @@ var child = require('child_process');
 
 function execSleep(time) {
   var sleepCmd = process.platform === 'win32'
-    ? 'ping 127.0.0.1 -n1 -w ' + (time * 1000) // this is the best Windows offers
+    ? 'timeout /t ' + time + ' /nobreak'
     : 'sleep ' + time; // actual unix sleep command
 
   if (child.execSync) {
