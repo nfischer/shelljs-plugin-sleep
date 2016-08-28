@@ -6,12 +6,14 @@ var shell = require('shelljs');
 require('should');
 
 function assertApproxEqual(val1, val2) {
-  var epsilon = process.env.CI ? 25 : 5; // CI tends to run slower
+  var epsilon = process.env.CI ? 40 : 10; // CI tends to run slower
   var diff = Math.abs(val1 - val2);
   try {
     (diff <= epsilon).should.be.ok();
   } catch (e) {
-    throw new Error('took ' + val1 + ' seconds but expected ' + val2 + ' seconds');
+    var msg = 'took ' + val1 + ' milliseconds but expected ' + val2 + '\u00B1' +
+      epsilon + ' milliseconds';
+    throw new Error(msg);
   }
 }
 
