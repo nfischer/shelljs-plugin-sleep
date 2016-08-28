@@ -6,7 +6,7 @@ var shell = require('shelljs');
 require('should');
 
 function assertApproxEqual(val1, val2) {
-  var epsilon = 5;
+  var epsilon = process.env.CI ? 25 : 5; // CI tends to run slower
   var diff = Math.abs(val1 - val2);
   try {
     (diff <= epsilon).should.be.ok();
