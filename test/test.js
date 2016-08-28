@@ -8,7 +8,7 @@ require('should');
 function assertApproxEqual(val1, val2, opts) {
   opts = opts || {};
   var epsilon = opts.epsilon || 20;
-  if (process.env.CI) epsilon += 200; // CI tends to run slower
+  if (process.env.CI) epsilon *= 20; // CI tends to run slower
 
   var diff = Math.abs(val1 - val2);
   try {
