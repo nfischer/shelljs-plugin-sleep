@@ -19,7 +19,7 @@ os:
   - linux
   - osx
 compiler:
-  - gcc
-  - clang
+  - gcc++
+  - clang++
 script:
   - npm test
