@@ -27,6 +27,16 @@ require('shelljs-plugin-sleep');
 shell.sleep(1); // the plugin is now available!
 ```
 
+### sleep(seconds)
+
+No available options.
+
+Examples:
+
+```javascript
+shell.sleep(3); // sleep for 3000 milliseconds
+```
+
 ## Supported systems
 
  - Linux (all variants)
