@@ -8,7 +8,11 @@ require('should');
 function assertApproxEqual(val1, val2) {
   var epsilon = 5;
   var diff = Math.abs(val1 - val2);
-  (diff <= epsilon).should.be.ok();
+  try {
+    (diff <= epsilon).should.be.ok();
+  } catch (e) {
+    throw new Error('took ' + val1 + ' seconds but expected ' + val2 + ' seconds');
+  }
 }
 
 describe('plugin-sleep', function () {
