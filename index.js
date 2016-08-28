@@ -3,12 +3,15 @@ var shell = require('shelljs');
 var child = require('child_process');
 
 function execSleep(time) {
-  var sleepCmd = process.platform === 'win32' ? 'timeout' : 'sleep';
+  var sleepCmd = process.platform === 'win32'
+    ? 'ping 127.0.0.1 -n1 -w ' + (time * 1000) // this is the best Windows offers
+    : 'sleep ' + time; // actual unix sleep command
+
   if (child.execSync) {
-    child.execSync(sleepCmd + ' ' + time);
+    child.execSync(sleepCmd);
     exports.epsilon = 15;
   } else {
-    shell.exec(sleepCmd + ' ' + time, { silent: true });
+    shell.exec(sleepCmd, { silent: true });
     exports.epsilon = 180;
   }
 }
