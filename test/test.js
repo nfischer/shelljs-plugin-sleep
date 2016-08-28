@@ -5,8 +5,11 @@ var shell = require('shelljs');
 
 require('should');
 
-function assertApproxEqual(val1, val2) {
-  var epsilon = process.env.CI ? 40 : 10; // CI tends to run slower
+function assertApproxEqual(val1, val2, opts) {
+  opts = opts || {};
+  var epsilon = opts.epsilon || pluginSleep.epsilon;
+  if (process.env.CI) epsilon += 40; // CI tends to run slower
+
   var diff = Math.abs(val1 - val2);
   try {
     (diff <= epsilon).should.be.ok();
@@ -118,5 +121,12 @@ describe('plugin-sleep', function () {
     assertApproxEqual(end - start, 1000);
     ret.code.should.equal(0);
     ret.stdout.should.equal('');
+  });
+
+  it('the fallback works', function () {
+    var start = new Date();
+    pluginSleep.execSleep(1);
+    var end = new Date();
+    assertApproxEqual(end - start, 1000);
   });
 });

@@ -39,7 +39,7 @@
   "peerDependencies": {
     "shelljs": "^0.7.3"
   },
-  "dependencies": {
+  "optionalDependencies": {
     "sleep": "^3.0.1"
   }
 }

@@ -1,5 +1,29 @@
 var plugin = require('shelljs/plugin');
-var sleep = require('sleep');
+var shell = require('shelljs');
+var child = require('child_process');
+
+function execSleep(time) {
+  var sleepCmd = process.platform === 'win32' ? 'timeout' : 'sleep';
+  if (child.execSync) {
+    child.execSync(sleepCmd + ' ' + time);
+    exports.epsilon = 15;
+  } else {
+    shell.exec(sleepCmd + ' ' + time, { silent: true });
+    exports.epsilon = 180;
+  }
+}
+
+var sleep;
+
+try {
+  /* eslint import/no-unresolved: 0 */
+  sleep = require('sleep');
+  exports.epsilon = 15;
+} catch (e) {
+  sleep = {
+    sleep: execSleep,
+  };
+}
 
 function sleepImpl(options, waitTime) {
   var waitInt = parseInt(waitTime, 10);
@@ -19,3 +43,4 @@ plugin.register('sleep', sleepImpl, {
 
 // Optionally, you can export the implementation of the command like so:
 exports.sleep = sleepImpl;
+exports.execSleep = execSleep;
