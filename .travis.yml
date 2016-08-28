@@ -18,5 +18,8 @@ install:
 os:
   - linux
   - osx
+compiler:
+  - gcc
+  - clang
 script:
   - npm test
