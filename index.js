@@ -18,8 +18,9 @@ function execSleep(time) {
 }
 
 function busyWait(time) {
-  var end = new Date().getTime() + (time * 1000);
-
+  var start = new Date().getTime();
+  var end = start + (time * 1000);
+  exports.epsilon = 80;
   while (new Date().getTime() <= end) {
     // loop continuously, because Node can't sleep
   }
