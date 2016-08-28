@@ -7,10 +7,8 @@ function execSleep(time) {
     var sleepCmd = 'sleep'; // actual unix sleep command
     if (child.execFileSync) {
       child.execFileSync(sleepCmd, [time]);
-      exports.epsilon = 20;
     } else {
       shell.exec(sleepCmd + ' ' + time, { silent: true });
-      exports.epsilon = 180;
     }
   } else {
     throw new Error('Unable to find `sleep` command');
@@ -20,7 +18,6 @@ function execSleep(time) {
 function busyWait(time) {
   var start = new Date().getTime();
   var end = start + (time * 1000);
-  exports.epsilon = 80;
   while (new Date().getTime() <= end) {
     // loop continuously, because Node can't sleep
   }
@@ -31,7 +28,6 @@ var sleepFunc;
 try {
   /* eslint import/no-unresolved: 0 */
   var sleep = require('sleep');
-  exports.epsilon = 15;
   sleepFunc = sleep.sleep.bind(sleep);
   exports.nativeExt = sleep.sleep.bind(sleep);
 } catch (e) {
