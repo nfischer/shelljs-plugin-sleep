@@ -1,7 +1,7 @@
 # shelljs-plugin-sleep
 
 [![Travis](https://img.shields.io/travis/nfischer/shelljs-plugin-sleep/master.svg?style=flat-square&label=unix)](https://travis-ci.org/nfischer/shelljs-plugin-sleep)
-[![AppVeyor](https://img.shields.io/appveyor/ci/nfischer/shelljs-plugin-sleep/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/nfischer/shelljs-plugin-sleep/branch/master)
+[![AppVeyor](https://img.shields.io/appveyor/ci/shelljs/shelljs-plugin-sleep/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/shelljs/shelljs-plugin-sleep/branch/master)
 [![npm](https://img.shields.io/npm/v/shelljs-plugin-sleep.svg?style=flat-square)](https://www.npmjs.com/package/shelljs-plugin-sleep)
 [![shelljs-plugin](https://img.shields.io/badge/shelljs-plugin-brightgreen.svg?style=flat-square)](https://github.com/shelljs/shelljs/wiki/Using-ShellJS-Plugins)
 
