@@ -1,25 +1,15 @@
 var plugin = require('shelljs/plugin');
 var shell = require('shelljs');
 var child = require('child_process');
+var path = require('path');
 
+var pathToSleepHelper = path.join(__dirname, 'sleepHelper.js');
+var nodeSleep = shell.config.execPath + ' ' + pathToSleepHelper + ' ';
 function execSleep(time) {
   if (shell.which('sleep')) {
-    var sleepCmd = 'sleep'; // actual unix sleep command
-    if (child.execFileSync) {
-      child.execFileSync(sleepCmd, [time]);
-    } else {
-      shell.exec(sleepCmd + ' ' + time, { silent: true });
-    }
+    child.execSync('sleep ' + time);
   } else {
-    throw new Error('Unable to find `sleep` command');
-  }
-}
-
-function busyWait(time) {
-  var start = new Date().getTime();
-  var end = start + (time * 1000);
-  while (new Date().getTime() <= end) {
-    // loop continuously, because Node can't sleep
+    child.execSync(nodeSleep + time);
   }
 }
 
@@ -31,11 +21,7 @@ try {
   sleepFunc = sleep.sleep.bind(sleep);
   exports.nativeExt = sleep.sleep.bind(sleep);
 } catch (e) {
-  if (shell.which('sleep')) {
-    sleepFunc = execSleep;
-  } else {
-    sleepFunc = busyWait;
-  }
+  sleepFunc = execSleep;
 }
 
 function sleepImpl(options, waitTime) {
@@ -57,4 +43,3 @@ plugin.register('sleep', sleepImpl, {
 
 exports.sleep = sleepImpl;
 exports.execSleep = execSleep;
-exports.busyWait = busyWait;

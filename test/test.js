@@ -129,18 +129,11 @@ describe('plugin-sleep', function () {
         var start = new Date();
         pluginSleep.execSleep(1);
         var end = new Date();
-        assertApproxEqual(end - start, 1000);
+        assertApproxEqual(end - start, 1000, { epsilon: 300 });
       } else {
         // Cannot verify on Windows
         console.warn('Unable to verify child_process.execSync');
       }
-    });
-
-    it('can rely on a busy wait', function () {
-      var start = new Date();
-      pluginSleep.busyWait(1);
-      var end = new Date();
-      assertApproxEqual(end - start, 1000);
     });
   });
 });
