@@ -37,7 +37,7 @@ function sleepImpl(options, waitTime) {
 
 // Register the new plugin as a ShellJS command
 plugin.register('sleep', sleepImpl, {
-  cmdOptions: {},   // There are no supported options for this command
+  cmdOptions: {}, // There are no supported options for this command
   allowGlobbing: false,
 });
 

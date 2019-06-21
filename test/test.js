@@ -14,8 +14,8 @@ function assertApproxEqual(val1, val2, opts) {
   try {
     (diff <= epsilon).should.be.ok();
   } catch (e) {
-    var msg = 'took ' + val1 + ' milliseconds but expected ' + val2 + '\u00B1' +
-      epsilon + ' milliseconds';
+    var msg = 'took ' + val1 + ' milliseconds but expected ' + val2 + '\u00B1'
+      + epsilon + ' milliseconds';
     throw new Error(msg);
   }
 }
