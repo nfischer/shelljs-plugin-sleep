@@ -1,6 +1,7 @@
 /* globals describe, it, beforeEach, afterEach */
 
 var pluginSleep = require('..');
+/* eslint-disable import/order */
 var shell = require('shelljs');
 
 require('should');
