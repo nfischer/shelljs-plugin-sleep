@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/nfischer/shelljs-plugin-sleep/tree/HEAD)
-
-[Full Changelog](https://github.com/nfischer/shelljs-plugin-sleep/compare/v0.2.0...HEAD)
+## [v0.2.1](https://github.com/nfischer/shelljs-plugin-sleep/tree/v0.2.1) (2022-01-08)
+[Full Changelog](https://github.com/nfischer/shelljs-plugin-sleep/compare/v0.2.0...v0.2.1)
 
 **Merged pull requests:**
 
