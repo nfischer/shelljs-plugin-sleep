@@ -1,6 +1,6 @@
 ### Node version (or tell us if you're using electron or some other framework):
 
-### ShellJS version (the most recent version/Github branch you see the bug on):
+### ShellJS version (the most recent version/GitHub branch you see the bug on):
 
 ### Operating system:
 
