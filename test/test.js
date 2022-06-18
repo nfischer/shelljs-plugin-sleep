@@ -125,16 +125,22 @@ describe('plugin-sleep', function () {
   });
 
   describe('fallback methods', function () {
-    it('can rely on child_process.execSync', function () {
+    it('can rely on execSync + sleep command', function () {
       if (shell.which('sleep')) {
         var start = new Date();
-        pluginSleep.execSleep(1);
+        pluginSleep.sleepWithCommand(1);
         var end = new Date();
         assertApproxEqual(end - start, 1000, { epsilon: 300 });
       } else {
-        // Cannot verify on Windows
-        console.warn('Unable to verify child_process.execSync');
+        console.warn('Cannot find sleep command so cannot verify');
       }
+    });
+
+    it('can rely on execSync + helper script', function () {
+      var start = new Date();
+      pluginSleep.sleepWithNode(1);
+      var end = new Date();
+      assertApproxEqual(end - start, 1000, { epsilon: 300 });
     });
   });
 });
