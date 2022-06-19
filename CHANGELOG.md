@@ -1,5 +1,13 @@
 # Change Log
 
+## [v0.2.2](https://github.com/nfischer/shelljs-plugin-sleep/tree/v0.2.2) (2022-06-19)
+[Full Changelog](https://github.com/nfischer/shelljs-plugin-sleep/compare/v0.2.1...v0.2.2)
+
+**Fixed bugs:**
+
+- Error when using a `node` path with spaces in Windows [\#12](https://github.com/nfischer/shelljs-plugin-sleep/issues/12)
+- fix: support space in node exec path [\#13](https://github.com/nfischer/shelljs-plugin-sleep/pull/13) ([nfischer](https://github.com/nfischer))
+
 ## [v0.2.1](https://github.com/nfischer/shelljs-plugin-sleep/tree/v0.2.1) (2022-01-08)
 [Full Changelog](https://github.com/nfischer/shelljs-plugin-sleep/compare/v0.2.0...v0.2.1)
 
