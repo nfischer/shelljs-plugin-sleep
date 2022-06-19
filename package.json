@@ -1,6 +1,6 @@
 {
   "name": "shelljs-plugin-sleep",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A ShellJS plugin for the sleep command",
   "main": "index.js",
   "scripts": {
