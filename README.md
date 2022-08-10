@@ -1,6 +1,6 @@
 # shelljs-plugin-sleep
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fnfischer%2Fshelljs-plugin-sleep%2Fbadge%3Fref%3Dmaster&style=flat-square)](https://actions-badge.atrox.dev/nfischer/shelljs-plugin-sleep/goto?ref=master)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fnfischer%2Fshelljs-plugin-sleep%2Fbadge%3Fref%3Dmain&style=flat-square)](https://actions-badge.atrox.dev/nfischer/shelljs-plugin-sleep/goto?ref=main)
 [![npm](https://img.shields.io/npm/v/shelljs-plugin-sleep.svg?style=flat-square)](https://www.npmjs.com/package/shelljs-plugin-sleep)
 [![shelljs-plugin](https://img.shields.io/badge/shelljs-plugin-brightgreen.svg?style=flat-square)](https://github.com/shelljs/shelljs/wiki/Using-ShellJS-Plugins)
 
