@@ -28,4 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: npm run test
+      - run: npm run test-without-lint
+      - name: run lint (node >= 6)
+        run: npm run lint
+        if: matrix.node-version >= 6
