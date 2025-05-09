@@ -31,7 +31,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.26.0",
-    "mocha": "^5.2.0",
+    "mocha": "^11.2.2",
     "shelljs": "^0.10.0",
     "shelljs-changelog": "^0.2.5",
     "shelljs-release": "^0.5.2",
