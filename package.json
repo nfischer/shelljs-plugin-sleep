@@ -28,7 +28,7 @@
     "sleepHelper.js"
   ],
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^9.26.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.26.0",
     "mocha": "^5.2.0",
