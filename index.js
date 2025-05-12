@@ -3,7 +3,6 @@ var shell = require('shelljs');
 var child = require('child_process');
 var path = require('path');
 
-
 function sleepWithCommand(time) {
   child.execSync('sleep ' + time);
 }
